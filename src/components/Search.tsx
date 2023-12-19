@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 const Search = () => {
   const [inputValue, setInputValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
-  console.log(suggestions);
   const navigate = useNavigate();
 
   const handleMovieCardClick = (movieId: string) => {

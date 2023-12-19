@@ -1,6 +1,5 @@
 import { useNavigate, useParams } from "react-router-dom";
 import "../scss/details.scss";
-import { useEffect, useState } from "react";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import ReadMore from "../components/ReadMore";
@@ -19,6 +18,10 @@ const Details = () => {
     } catch (error) {
       console.log(error);
     }
+  };
+
+  const handleWhereToWatchClick = (movieId: string) => {
+    navigate(`/sources/${movieId}`);
   };
 
   const query = useQuery({
@@ -73,7 +76,9 @@ const Details = () => {
             )}
           </div>
           <div className="available">
-            <h3>Where to watch {movieObject.title}?</h3>
+            <h3 onClick={() => handleWhereToWatchClick(movieObject.id)}>
+              Where to watch {movieObject.title}?
+            </h3>
             <div className="sources"></div>
           </div>
         </div>
