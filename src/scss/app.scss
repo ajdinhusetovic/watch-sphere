@@ -21,6 +21,14 @@ body {
     flex-direction: column;
 }
 
+.read-or-hide {
+    color: config.$pink-text;
+    cursor: pointer;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
 
 
 

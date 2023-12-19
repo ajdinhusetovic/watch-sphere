@@ -2,11 +2,17 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import "../scss/search.scss";
+import { useNavigate } from "react-router-dom";
 
 const Search = () => {
   const [inputValue, setInputValue] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   console.log(suggestions);
+  const navigate = useNavigate();
+
+  const handleMovieCardClick = (movieId: string) => {
+    navigate(`/details/${movieId}`);
+  };
 
   const query = useQuery({
     queryKey: ["movie", inputValue],
@@ -33,13 +39,9 @@ const Search = () => {
         className="movie-input"
       />
       {suggestions.length > 0 ? (
-        <a
-          href="https://google.com"
-          target="_blank"
-          className="movie-list-wrapper"
-        >
+        <div className="movie-list-wrapper">
           {suggestions.map((movie, index) => (
-            <div key={index}>
+            <div key={index} onClick={() => handleMovieCardClick(movie.id)}>
               <div className="movie-card-wrapper">
                 <div className="image-wrapper">
                   <img src={movie.image_url} alt="" width={50} height={50} />
@@ -51,7 +53,7 @@ const Search = () => {
               </div>
             </div>
           ))}
-        </a>
+        </div>
       ) : (
         <p></p>
       )}

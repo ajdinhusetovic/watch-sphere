@@ -1,0 +1,73 @@
+@use './config';
+
+.details-wrapper {
+    flex: 1;
+
+    header {
+        button {
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            padding: 6px;
+            margin: 5px 0 0 5px;
+            background: transparent;
+            border: 2px solid config.$pink-text;
+            transition: background-color 0.3s, transform 0.3s;
+
+            &:hover {
+                background-color: config.$pink-text;
+                transform: scale(1.1);
+            }
+
+            .icon {
+                transition: transform 0.3s; /* Apply transition to the icon */
+              }
+
+              &:hover .icon {
+                transform: translateX(-4px); /* Move the icon a bit to the left on hover */
+              }
+        }
+    }
+
+    .content-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .trailer-wrapper {
+            iframe {
+                border: 1px solid config.$pink-text;
+            }
+            p {
+                text-align: center;
+            }
+        }
+
+        .poster {
+            margin: 30px 0 30px 0;
+        }
+
+        .details {
+            width: 90%;
+            margin: 0 auto;
+
+            .movie-title, .movie-year {
+                text-align: center;
+                padding: 4px;
+            }
+
+            .movie-plot {
+                margin: 10px 0 30px 0;
+            }
+
+            .available {
+                margin: 20px 0 20px 0;
+                color: config.$pink-text;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+
+        }
+    }
+}

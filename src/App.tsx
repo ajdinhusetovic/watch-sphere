@@ -3,14 +3,15 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import Home from "./pages/Home";
 import Footer from "./components/Footer";
+import Details from "./pages/Details";
 
 function App() {
   const client = new QueryClient({
-    defaultOptions: {
-      queries: {
-        refetchOnWindowFocus: false,
-      },
-    },
+    // defaultOptions: {
+    //   queries: {
+    //     refetchOnWindowFocus: false,
+    //   },
+    // },
   });
   return (
     <>
@@ -18,6 +19,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/details/:movieId" element={<Details />} />
           </Routes>
         </Router>
         <Footer />
