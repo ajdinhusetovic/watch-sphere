@@ -42,6 +42,10 @@
             p {
                 text-align: center;
             }
+
+            #movie-title-trailer {
+                color: config.$pink-text;
+            }
         }
 
         .poster {
@@ -55,6 +59,12 @@
             .movie-title, .movie-year {
                 text-align: center;
                 padding: 4px;
+            }
+
+            .movie-year {
+                p {
+                    display: inline;
+                }
             }
 
             .movie-plot {

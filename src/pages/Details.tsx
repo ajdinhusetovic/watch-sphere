@@ -64,7 +64,8 @@ const Details = () => {
         <div className="details">
           <h2 className="movie-title">{movieObject.title}</h2>
           <p className="movie-year">
-            {movieObject.year} - {movieObject.end_year}
+            {movieObject.year}{" "}
+            {movieObject.end_year && <p>- {movieObject.end_year}</p>}
           </p>
           <div className="movie-plot">
             {movieObject.plot_overview && ( // Check if plot_overview exists
@@ -79,7 +80,11 @@ const Details = () => {
         <div className="trailer-wrapper">
           {embedURL && (
             <div>
-              <p>Watch the {movieObject.title} trailer</p>
+              <p>
+                Watch the{" "}
+                <span id="movie-title-trailer">{movieObject.title}</span>{" "}
+                trailer
+              </p>
               <iframe
                 title="Trailer"
                 src={embedURL}
