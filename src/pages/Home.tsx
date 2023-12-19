@@ -1,3 +1,4 @@
+import Search from "../components/Search";
 import "../scss/home.scss";
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
         <span id="watch">WATCH</span>
         <span id="sphere">sphere</span>
       </div>
+      <Search />
     </div>
   );
 };

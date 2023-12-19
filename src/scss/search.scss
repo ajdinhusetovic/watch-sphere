@@ -1,0 +1,47 @@
+@use './config';
+
+.search-wrapper {
+    width: 85%;
+    margin: 0 auto;
+    
+    .movie-list-wrapper {
+        margin-top: 20px;
+        height: 400px;
+        overflow-y: auto;
+        background-color: #20191c;
+        padding: 8px;
+        border-radius: 4px;
+
+        .movie-card-wrapper {
+            display: flex;
+            align-items: center;
+            background-color: black;
+            margin-top: 8px;
+            border-radius: 8px;
+            border: 2px solid config.$pink-text;
+            padding: 4px;
+            
+            .title-wrapper {
+                overflow: hidden;
+                margin-left: 10px;
+                
+                p {
+                    white-space: nowrap; /* Prevent text from wrapping */
+                    overflow: hidden; /* Hide overflowing text */
+                    text-overflow: ellipsis;
+                    font-size: 0.9rem;
+                }
+            }
+
+            .image-wrapper {
+                display: flex;
+                align-items: center;
+                
+                img {
+                    border-top-left-radius: 8px;
+                    border-bottom-left-radius: 8px;
+                }
+            }
+        }
+    }
+}
