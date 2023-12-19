@@ -30,6 +30,7 @@ const Search = () => {
         placeholder="Search for movies..."
         onChange={(e) => setInputValue(e.target.value)}
         value={inputValue}
+        className="movie-input"
       />
       {suggestions.length > 0 ? (
         <div className="movie-list-wrapper">

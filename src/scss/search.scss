@@ -3,12 +3,39 @@
 .search-wrapper {
     width: 85%;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+
+    .movie-input {
+        padding: 8px;
+        font-size: 1rem;
+        margin-top: 50px;
+        border-radius: 16px;
+        border: 2px solid config.$pink-text;
+        background-color: #0e0b0c;
+        color: white;
+
+        &:focus {
+            outline: none;
+            box-shadow: 0 0 5px 0 config.$pink-text;
+            animation: glow 1.5s infinite alternate;
+
+            @keyframes glow {
+                from {
+                  box-shadow: 0 0 5px 0 config.$pink-text; /* Initial shadow */
+                }
+                to {
+                  box-shadow: 0 0 10px 5px config.$pink-text; /* Glowing effect */
+                }
+            }
+        }
+    }
     
     .movie-list-wrapper {
         margin-top: 20px;
         height: 400px;
         overflow-y: auto;
-        background-color: #20191c;
+        background-color: #0e0b0c;
         padding: 8px;
         border-radius: 4px;
 
@@ -20,6 +47,17 @@
             border-radius: 8px;
             border: 2px solid config.$pink-text;
             padding: 4px;
+            transition: scaleMovieCard 0.3s ease-in-out;
+
+            @keyframes scaleAnimation {
+                to {
+                  transform: scale(0.9);
+                }
+              }
+
+            &:hover {
+                animation: scaleAnimation 0.3s ease forwards;
+            }
             
             .title-wrapper {
                 overflow: hidden;
