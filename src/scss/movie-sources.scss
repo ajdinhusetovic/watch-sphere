@@ -1,0 +1,17 @@
+@use './config';
+
+
+.movie-sources-component-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .movie-sources-wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        margin-top: 80px;
+        height: 500px;
+        overflow-y: auto;
+    }
+}

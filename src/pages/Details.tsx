@@ -3,7 +3,7 @@ import "../scss/details.scss";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import ReadMore from "../components/ReadMore";
-import { FaArrowLeft } from "react-icons/fa";
+import BackButton from "../components/BackButton";
 
 const Details = () => {
   const { movieId } = useParams<{ movieId: string }>();
@@ -31,14 +31,6 @@ const Details = () => {
 
   const movieObject = Object.assign({}, query.data);
 
-  // Fetch details or perform actions based on the movieId
-  const handleBackClick = () => {
-    navigate("/");
-  };
-
-  console.log(query.status);
-  console.log(movieObject);
-
   const videoLink = movieObject.trailer;
 
   const extractVideoID = (url) => {
@@ -56,9 +48,7 @@ const Details = () => {
   return (
     <div className="details-wrapper">
       <header>
-        <button className="back-button" onClick={handleBackClick}>
-          <FaArrowLeft className="icon" style={{ color: "white" }} />
-        </button>
+        <BackButton location={"/"} />
       </header>
       <div className="content-wrapper">
         <div className="poster">

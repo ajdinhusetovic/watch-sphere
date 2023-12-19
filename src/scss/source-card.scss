@@ -1,0 +1,26 @@
+@use './config';
+
+.source-card-wrapper {
+    border: 2px solid config.$pink-text;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 8px;
+    width: 90%;
+    margin: 0 auto;
+
+    .source-link {
+        a {
+            text-decoration: underline;
+            color: config.$pink-text;
+        }
+    }
+
+    .source-price {
+        p {
+            color: green;
+        }
+    }
+}
