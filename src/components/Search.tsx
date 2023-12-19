@@ -33,7 +33,11 @@ const Search = () => {
         className="movie-input"
       />
       {suggestions.length > 0 ? (
-        <div className="movie-list-wrapper">
+        <a
+          href="https://google.com"
+          target="_blank"
+          className="movie-list-wrapper"
+        >
           {suggestions.map((movie, index) => (
             <div key={index}>
               <div className="movie-card-wrapper">
@@ -47,7 +51,7 @@ const Search = () => {
               </div>
             </div>
           ))}
-        </div>
+        </a>
       ) : (
         <p></p>
       )}
