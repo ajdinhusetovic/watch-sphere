@@ -4,15 +4,23 @@ import { useQuery } from "@tanstack/react-query";
 import "../scss/search.scss";
 import { useNavigate } from "react-router-dom";
 
+interface Movie {
+  id: string;
+  name: string;
+  image_url: string;
+  // Add other properties if necessary
+}
+
 const Search = () => {
   const [inputValue, setInputValue] = useState("");
-  const [suggestions, setSuggestions] = useState([]);
+  const [suggestions, setSuggestions] = useState<Movie[]>([]);
   const navigate = useNavigate();
 
   const handleMovieCardClick = (movieId: string) => {
     navigate(`/details/${movieId}`);
   };
 
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const query = useQuery({
     queryKey: ["movie", inputValue],
     queryFn: async () => {
