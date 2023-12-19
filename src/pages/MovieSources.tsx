@@ -1,4 +1,4 @@
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import SourceCard from "../components/SourceCard";
@@ -24,7 +24,6 @@ const MovieSources = () => {
     queryKey: ["source"],
     queryFn: fetchData,
   });
-  console.log(query.data);
 
   return (
     <div className="movie-sources-component-wrapper">
@@ -36,7 +35,7 @@ const MovieSources = () => {
         ) : query.isError ? (
           <div>Error: {query.error.message}</div>
         ) : (
-          query.data.map((source, index) => <SourceCard source={source} />)
+          query.data.map((source) => <SourceCard source={source} />)
         )}
       </div>
     </div>

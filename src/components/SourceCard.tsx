@@ -1,6 +1,11 @@
 import "../scss/source-card.scss";
+import { FC } from "react";
 
-const SourceCard = ({ source }) => {
+interface SourceProps {
+  source: string;
+}
+
+const SourceCard: FC<SourceProps> = ({ source }) => {
   return (
     <div className="source-card-wrapper">
       <div className="source-name">

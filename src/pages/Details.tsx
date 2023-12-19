@@ -33,7 +33,7 @@ const Details = () => {
 
   const videoLink = movieObject.trailer;
 
-  const extractVideoID = (url) => {
+  const extractVideoID = (url: string) => {
     if (!url) return null; // Check if URL is undefined or empty
     const regExp =
       /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:[^\/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/;
