@@ -20,7 +20,6 @@ const Search = () => {
     navigate(`/details/${movieId}`);
   };
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const query = useQuery({
     queryKey: ["movie", inputValue],
     queryFn: async () => {
@@ -35,6 +34,7 @@ const Search = () => {
       }
     },
   });
+  console.log(query);
 
   return (
     <div className="search-wrapper">
