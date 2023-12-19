@@ -1,8 +1,15 @@
 import "../scss/source-card.scss";
 import { FC } from "react";
 
+interface Source {
+  name: string;
+  format: string;
+  price?: number;
+  web_url: string;
+}
+
 interface SourceProps {
-  source: string;
+  source: Source;
 }
 
 const SourceCard: FC<SourceProps> = ({ source }) => {

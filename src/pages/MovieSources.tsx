@@ -6,6 +6,14 @@ import "../scss/movie-sources.scss";
 import Logo from "../components/Logo";
 import BackButton from "../components/BackButton";
 
+interface Source {
+  name: string;
+  format: string;
+  price?: number;
+  web_url: string;
+  // Add other properties if necessary
+}
+
 const MovieSources = () => {
   const { movieId } = useParams<{ movieId: string }>();
 
@@ -35,7 +43,7 @@ const MovieSources = () => {
         ) : query.isError ? (
           <div>Error: {query.error.message}</div>
         ) : (
-          query.data.map((source) => <SourceCard source={source} />)
+          query.data.map((source: Source) => <SourceCard source={source} />)
         )}
       </div>
     </div>
