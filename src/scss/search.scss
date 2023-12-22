@@ -87,3 +87,38 @@
         }
     }
 }
+
+@media only screen and (min-width: 768px) {
+    .search-wrapper {
+        width: 70%; 
+        margin: 0 auto;
+
+        .movie-input {
+            font-size: 1.1rem;
+        }
+
+        .movie-list-wrapper {
+            .movie-card-wrapper {
+               .title-wrapper {
+                p {
+                    font-size: 1.1rem;
+                }
+               } 
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .search-wrapper {
+        width: 60%;
+        margin: 0 auto;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .search-wrapper {
+        width: 50%;
+        margin: 0 auto;
+    }
+}

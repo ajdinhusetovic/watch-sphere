@@ -34,7 +34,6 @@ const Search = () => {
       }
     },
   });
-  console.log(query);
 
   return (
     <div className="search-wrapper">
