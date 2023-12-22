@@ -55,3 +55,69 @@
         }
     }
 }
+
+@media only screen and (min-width: 768px) {
+    .content-wrapper {
+        .details {
+            .movie-title {
+                font-size: 1.9rem;
+            }
+            .movie-year {
+                font-size: 1.2rem;
+            }
+            .movie-plot {
+                font-size: 1.1rem;
+            }
+            .available {
+                font-size: 1.3rem;
+            }
+        }
+        
+        .trailer-wrapper {
+            p {
+                font-size: 1.1rem;
+                padding: 8px;
+            }
+            iframe {
+                width: 500px;
+                height: 300px;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .details-wrapper {
+        .content-wrapper {
+            .details {
+                width: 80%;
+                margin: 0 auto;
+            }
+            .trailer-wrapper {
+                iframe {
+                    width: 700px;
+                    height: 400px;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .details-wrapper {
+        .content-wrapper {
+            .details {
+                width: 60%;
+                margin: 0 auto;
+            }
+        }
+        
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .search-wrapper {
+        width: 50%;
+        margin: 0 auto;
+    }
+}
